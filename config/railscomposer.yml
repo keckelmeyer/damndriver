@@ -2,7 +2,7 @@
 
 development:
   apps4: none
-  announcements: mailinglist
+  announcements: none
   dev_webserver: puma
   prod_webserver: puma
   database: sqlite
@@ -14,7 +14,7 @@ development:
   authentication: devise
   devise_modules: confirmable
   omniauth_provider: 
-  authorization: roles
+  authorization: pundit
   form_builder: simple_form
   pages: about+users
   layouts: 
@@ -28,4 +28,4 @@ development:
   better_errors: 
   pry: 
   rvmrc: 
-  dashboard: administrate
+  dashboard: upmin
