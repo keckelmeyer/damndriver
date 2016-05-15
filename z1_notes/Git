@@ -1,0 +1,19 @@
+$ git checkout master
+$ git checkout -b BranchName
+
+$ git add -A
+$ git commit -m "comment"
+$ git checkout master
+$ git merge BranchName
+$ git push
+$ git push heroku
+
+
+
+
+GIT
+1. Git init
+2. git add .  *Or* git add -A (all files) or git add <file name>(single file)
+3. git diff <file name> show differences between working and staging area files
+4. git commit -m “<Comment about commit>”
+5. git log (See log of commits)

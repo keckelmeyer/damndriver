@@ -1,0 +1,105 @@
+Rails
+1. Create new rails application
+  a. rails new appname
+2. Change to new directory
+  a. cd appname
+3. Install gems
+  a. bundle install
+4. Start server
+  a. rails (s)erver
+5. Generate Controller
+  a. rails (g)enerate controller PluralControllerName optional_methods
+6. Add Controller Methods
+  a. def method … end
+7. Add route to config/routes/rb
+  a. get ‘name’ => ‘controller_name#method’
+    i. http://localhost:3000/name  will direct to ControllerName def method
+  b. resources :controller
+    i. it maps URLs to the controller's seven standard actions
+8. Create view
+  a. app/views/controller_name/method.html.erb
+
+Codecademy Rails Projects (Controllers)
+1. Broadway http://www.codecademy.com/en/practice/learn-rails/topics/start/projects/learn-rails_broadway
+2. Bolt http://www.codecademy.com/en/practice/learn-rails/topics/start/projects/learn-rails_bolt-network
+
+9. Generate Model
+  a. rails (g)enerate model ModelName (field_name data_type)
+10. Open migration file in db/migrate/ and add fields and data types to table
+  a. t.data_type :field_name
+11. Migrate database
+  a. rake db:migrate
+12. Seed data from (db/seeds.rb)
+  a. rake db:seed
+13. Generate Controller for Model
+  a. See step 5 above
+14. Add route for Controller’s index of Model
+  a. See step 7 above (method will be index)
+15. Add Controller method
+  a. def index; @method_name_plural = Method.all
+16. Define Model methods
+  a. index – display a list of all Model
+  b. new – return an html form for creating a new model instance (@model = Model.new)
+  c. create – creates/saves instance data to database
+    i. def create
+    ii. @instance = ModelName.new(controllernamesingular_params)
+    iii. if @instance.save
+    iv.       redirect_to '/routepath'
+    v.     else
+    vi.       render '/otherroutepathsuchasnew'
+    vii.     end
+    viii.   end
+  d. show – shows a specific instance of data, or criteria of data
+  e. edit – return an html form for editing data
+  f. update – saves edited data back to database
+  g. destroy – deletes data
+17. Define private parameters
+  a. allows access to parts of the application that needs access, prevents access to outside
+  b. def controllername_params
+  c. params.require(:modelname).permit(:modeldatafield)
+  d. end
+18. Create views with forms for displaying, adding, or updating data.
+19. Add route(s) for other Model method(s)
+20. form_for
+  a. <%= form_for(@instance) do |f| %>
+  b. <% f.label :instance, “Optional text” %>
+  c. <% f.text_field :modeldatafield %>
+  d. <%= f.submit “Optional button text” %>
+  e. <% end %>
+21. assign root
+  a. root “controller#action”
+22. relate models
+  a. model1
+    i. has_many :model2
+  b. end
+  c. model2
+    i. Belongs_to :model1
+  d. end
+  e. model 2 needs in the migration:
+  i. t.references :model1
+
+Codecademy Rails Projects (Controllers)
+1. Innovation Cloud http://www.codecademy.com/en/practice/learn-rails/topics/one-model/projects/learn-rails_innovation-cloud
+2. Threadly http://www.codecademy.com/en/practice/learn-rails/topics/one-model/projects/learn-rails_threadly
+3.
+
+Rails generate model...
+
+Add column to existing table:
+rails generate migration action_column_to_table column_name:data_type
+rails g migration add_admin_to_users admin:boolean
+
+Execute changes:
+bundle exec rake db:migrate
+
+Rollback:
+bundle exec rake db:rollback
+
+Routes:
+bundle exec rake routes
+
+Toggle Boolean value:
+user.toggle!(:admin)
+
+Save console changes:
+user.save
