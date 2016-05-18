@@ -1,0 +1,23 @@
+<div class="form">
+  <%#simple_form_for(@review) do |f| %>
+    <%# f.error_notification %>
+    <%# f.select :state, collection: @state_opt, selected: 'Michigan', prompt:"State"%>
+    <%# f.input :plate, prompt:"License Plate" %>
+    <%# f.select :category, collection: @category_opt, prompt:"Category" %>
+    <%# f.select :rating, collection: @rating_opt, prompt:"Rating (1-worst, 5-best)"%>
+    <%# f.button :submit, 'Submit', class: 'submit' %>
+  <%# end %>
+  <%= form_for(@review) do |f| %>
+  <%= render 'shared/error_messages', object: @review %>
+  <%= f.label :state %>
+  <%= f.select :state,options_from_collection_for_select(State.all, :id, :name, 25) %>
+  <%# f.select(:state, options_for_select(us_states, 'MI'), {}, :id => "state") %>
+  <%= f.label :plate %>
+  <%= f.text_field :plate, maxlength: 7 %>
+  <%= f.label :category %>
+  <%= f.select :category,options_from_collection_for_select(Category.all, :id, :name) %>
+  <%= f.label :rating %>
+  <%= f.select :rating,options_from_collection_for_select(Rating.all, :id, :stars, 3) %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
