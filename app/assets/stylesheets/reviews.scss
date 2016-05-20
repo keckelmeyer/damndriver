@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .row{
   background-color: red;
   text-align: center;
@@ -10,4 +11,12 @@
 .new_review{
   text-align: center;
   color: white;
+  width: 200px;
+}
+.form_label{
+  text-align: left;
+  color: white
+}
+form{
+  text-align: center;
 }

@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    state_array = State.all.map{|s| [s.name, s.abvr, s.id]}
+    #state_array = State.all.map{|s| [s.name, s.abvr, s.id]}
     #@state_opt = State.order(:name).all.map{|s| [s.name]}
     #@category_opt = Category.order(:name).all.map{|c| [c.name]}
     #@rating_opt = Rating.order(:stars).all.map{|r| [r.stars]}
