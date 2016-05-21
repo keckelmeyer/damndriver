@@ -1,0 +1,12 @@
+<%= form_for @state do |f| %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :abvr %>
+      <%= f.text_field :abvr %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="title">
+  <h2>See <span class="byline">current states</span></h2>
+</div>
+<p>
+  <strong>?:</strong>
+  <%= @state.name %>
+  <%= @state.abvr %>
+</p>
+
+<%= link_to 'Edit State', edit_state_path(@state, :anchor =>"yield") %> |
+<%= link_to 'Back to States', states_path( :anchor =>"yield") %>

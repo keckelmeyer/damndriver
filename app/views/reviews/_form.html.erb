@@ -12,7 +12,7 @@
   <%= f.label :state, :class => "form_label" %>
   <%= f.select :state,options_from_collection_for_select(State.all, :id, :name, 25) %>
   <%# f.select(:state, options_for_select(us_states, 'MI'), {}, :id => "state") %>
-  <%= f.label :plate, "Plate (7 characters)", :class => "form_label" %>
+  <%= f.label :plate, "Plate (7 characters max)", :class => "form_label" %>
   <%= f.text_field :plate, maxlength: 7, :size => 150 %>
   <%= f.label :category, :class => "form_label" %>
   <%= f.select :category,options_from_collection_for_select(Category.all, :id, :name) %>
