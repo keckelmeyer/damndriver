@@ -6,7 +6,7 @@ class Review < ActiveRecord::Base
   validates :plate, presence: true, length: { in: 1..7}, format: { with: VALID_PLATE_REGEX }
   validates :rating, presence: true
   #belongs_to :user through :plate
-
+  has_many :plate
   def make_uppercase
     self.plate.upcase!
   end
