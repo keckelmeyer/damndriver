@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  attr_accessor :plate
+  #attr_accessor :plate
 
   def new
     @review = Review.new
@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
+    #@review.state = State.abvr.find_by(:state)
     @review = Review.new(review_params)
     if @review.save
       flash[:success] = "Your rating has been received!"
@@ -23,6 +24,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:state, :plate, :category, :rating)
+    params.require(:review).permit(:state, :plate, :category, :rating, :fullplate)
   end
 end

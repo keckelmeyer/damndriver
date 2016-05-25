@@ -2,7 +2,7 @@ class CreatePlates < ActiveRecord::Migration
   def change
     create_table :plates do |t|
       t.integer :user_id
-      t.integer :state_id
+      t.string :state
       t.string :plate
 
 
